@@ -9,6 +9,7 @@ from monday.utils import monday_json_stringify, gather_params
 # Eventually I will organize this file better but you know what today is not that day.
 
 # ITEM RESOURCE QUERIES
+# All item queries now include column titles via column { title } field in column_values
 def mutate_item_query(board_id, group_id, item_name, column_values, create_labels_if_missing):
     # Monday does not allow passing through non-JSON null values here,
     # so if you choose not to specify column values, need to set column_values to empty object.
@@ -80,6 +81,9 @@ def get_item_query(board_id, column_id, value, limit=None, cursor=None):
                         title
                     }
                     column_values {
+                        column {
+                            title
+                        }
                         id
                         text
                         value
@@ -102,6 +106,9 @@ def get_item_by_id_query(ids):
                     title
                 }
                 column_values {
+                    column {
+                        title
+                    },
                     id,
                     text,
                     value
@@ -124,6 +131,9 @@ def update_item_query(board_id, item_id, column_id, value):
                 id
                 name
                 column_values {
+                    column {
+                        title
+                    }
                     id
                     text
                     value
@@ -238,6 +248,9 @@ def update_multiple_column_values_query(board_id, item_id, column_values, create
                 id
                 name
                 column_values {
+                  column {
+                    title
+                  }
                   id
                   text
                 }
@@ -375,6 +388,9 @@ def get_board_items_query(board_id: Union[str, int], query_params: Optional[Mapp
                     id
                     name
                     column_values {
+                        column {
+                            title
+                        }
                         id
                         text
                         type
