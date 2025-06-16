@@ -10,7 +10,7 @@ For an overview of the Monday API, [click here](https://developer.monday.com/api
 
 
 #### Requirements
-- Python >= 3.6
+- Python >= 3.9
 
 #### Getting started
 `pip install monday`
