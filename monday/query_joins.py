@@ -9,7 +9,9 @@ from monday.utils import monday_json_stringify, gather_params
 # Eventually I will organize this file better but you know what today is not that day.
 
 # ITEM RESOURCE QUERIES
-# All item queries now include column titles via column { title } field in column_values
+# All item queries now include:
+# - Column titles via column { title } field in column_values
+# - Board information via board { id, name } field
 def mutate_item_query(board_id, group_id, item_name, column_values, create_labels_if_missing):
     # Monday does not allow passing through non-JSON null values here,
     # so if you choose not to specify column values, need to set column_values to empty object.
@@ -72,6 +74,10 @@ def get_item_query(board_id, column_id, value, limit=None, cursor=None):
                 items {
                     id
                     name
+                    board {
+                        id
+                        name
+                    }
                     updates {
                         id
                         body
@@ -101,6 +107,10 @@ def get_item_by_id_query(ids):
             items (ids: %s) {
                 id,
                 name,
+                board {
+                    id
+                    name
+                }
                 group {
                     id
                     title
@@ -130,6 +140,10 @@ def update_item_query(board_id, item_id, column_id, value):
             ) {
                 id
                 name
+                board {
+                    id
+                    name
+                }
                 column_values {
                     column {
                         title
@@ -247,6 +261,10 @@ def update_multiple_column_values_query(board_id, item_id, column_values, create
             ) {
                 id
                 name
+                board {
+                    id
+                    name
+                }
                 column_values {
                   column {
                     title
