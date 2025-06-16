@@ -6,7 +6,7 @@ from monday import __author__, __email__, __version__
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setup(name='monday',
+setup(name='mgmonday',
       version=__version__,
       description='A (fork of a) Python client library for Monday.com',
       long_description=long_description,
@@ -21,9 +21,6 @@ setup(name='monday',
       python_requires='>=3.9',
       classifiers=[
           "Programming Language :: Python :: 3",
-          "Programming Language :: Python :: 3.6",
-          "Programming Language :: Python :: 3.7",
-          "Programming Language :: Python :: 3.8",
           "Programming Language :: Python :: 3.9",
           "Programming Language :: Python :: 3.10",
           "Programming Language :: Python :: 3.11",

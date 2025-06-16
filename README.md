@@ -13,9 +13,9 @@ For an overview of the Monday API, [click here](https://developer.monday.com/api
 - Python >= 3.9
 
 #### Getting started
-`pip install monday`
+`pip install mgmonday`
 
-`monday` is very simple to use -- take a look at the below example:
+`mgmonday` is very simple to use -- take a look at the below example:
 ```python
 from monday import MondayClient
 
