@@ -4,6 +4,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A monday.com Python Client Library
 
+**Note:** This is a fork of the [original ProdPerfect/monday repository](https://github.com/ProdPerfect/monday) with additional enhancements and bug fixes.
 
 For an overview of the Monday API, [click here](https://developer.monday.com/api-reference/docs).
 
